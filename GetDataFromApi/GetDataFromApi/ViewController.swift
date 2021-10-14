@@ -46,7 +46,13 @@ class ViewController: UIViewController {
         if let thumbnailURL = photoDict["thumbnailUrl"] as? String ,
            let url = URL(string: thumbnailURL) {
             print(thumbnailURL)
-            myImageView.kf.setImage(with:url)
+            // create an array
+            //Always update ui on main thread
+            DispatchQueue.main.async {
+                self.myImageView.kf.setImage(with:url)
+                // reload table view
+            }
+            
         }
     }
 
