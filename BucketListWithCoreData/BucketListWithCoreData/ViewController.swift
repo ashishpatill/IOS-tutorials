@@ -66,10 +66,11 @@ class ViewController: UIViewController {
         
         do {
             try context.save()
+            print("Save successful")
             itemList.append(item)
             myTableView.reloadData()
         } catch {
-            print("Error: \(error)")
+            print("Save Error: \(error)")
         }
     }
     
@@ -108,9 +109,17 @@ class ViewController: UIViewController {
             for item in taskListFiltered {
                 item.name = "ashish 2"
             }
+            
             try context.save()
             readItem()
-            
+
+            /*
+            do {
+                try context.save()
+                readItem()
+            } catch {
+                print("Save Error: \(error)")
+            }*/
         } catch {
             print("Fetch Error:\(error)")
         }
