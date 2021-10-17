@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Photo: Codable {
+struct Recipe: Codable {
     var albumId : Int
     var id : Int
     var title : String

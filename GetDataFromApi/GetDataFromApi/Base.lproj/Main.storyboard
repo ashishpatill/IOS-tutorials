@@ -16,28 +16,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mNg-eE-bZm">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="RHU-13-7LA"/>
-                                    <constraint firstAttribute="height" constant="150" id="Voh-ZW-22x"/>
-                                </constraints>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kFN-ZB-xrJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipeCell" rowHeight="110" id="XxO-1R-eX1" customClass="RecipeCell" customModule="GetDataFromApi" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XxO-1R-eX1" id="5Nl-he-qyU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="apt-Q9-stO">
+                                                    <rect key="frame" x="5" y="10" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="OC1-gx-KUh"/>
+                                                        <constraint firstAttribute="width" constant="90" id="att-Kd-RSh"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyw-RM-iwh">
+                                                    <rect key="frame" x="100" y="16" width="289" height="78"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="apt-Q9-stO" firstAttribute="leading" secondItem="5Nl-he-qyU" secondAttribute="leading" constant="5" id="PVg-9G-g6d"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="apt-Q9-stO" secondAttribute="bottom" constant="10" id="Qfh-O6-88V"/>
+                                                <constraint firstItem="kyw-RM-iwh" firstAttribute="leading" secondItem="apt-Q9-stO" secondAttribute="trailing" constant="5" id="W2i-wI-WEx"/>
+                                                <constraint firstItem="apt-Q9-stO" firstAttribute="centerY" secondItem="5Nl-he-qyU" secondAttribute="centerY" id="ajW-Xm-Vba"/>
+                                                <constraint firstItem="apt-Q9-stO" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5Nl-he-qyU" secondAttribute="top" constant="10" id="kof-Vk-d54"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="kyw-RM-iwh" secondAttribute="trailing" constant="5" id="l9S-Tq-I1S"/>
+                                                <constraint firstItem="kyw-RM-iwh" firstAttribute="top" secondItem="5Nl-he-qyU" secondAttribute="topMargin" constant="5" id="nT4-AD-TQm"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="kyw-RM-iwh" secondAttribute="bottom" constant="5" id="z4k-iE-Lf3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="receipeImage" destination="apt-Q9-stO" id="oSw-GP-IeA"/>
+                                            <outlet property="receipeName" destination="kyw-RM-iwh" id="SlJ-yr-uka"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mNg-eE-bZm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xpw-Uq-Sat"/>
-                            <constraint firstItem="mNg-eE-bZm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="l2y-og-ne3"/>
+                            <constraint firstItem="kFN-ZB-xrJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9EI-zc-Rl2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kFN-ZB-xrJ" secondAttribute="bottom" id="OEE-JV-KGl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kFN-ZB-xrJ" secondAttribute="trailing" id="frs-cO-1Lc"/>
+                            <constraint firstItem="kFN-ZB-xrJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xGj-ZZ-nxH"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="myImageView" destination="mNg-eE-bZm" id="bbE-Ho-Amw"/>
+                        <outlet property="recipeTableView" destination="kFN-ZB-xrJ" id="UeS-V5-TEN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="110" y="31"/>
+            <point key="canvasLocation" x="-212" y="6"/>
         </scene>
     </scenes>
     <resources>

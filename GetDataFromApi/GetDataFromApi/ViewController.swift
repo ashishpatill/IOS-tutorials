@@ -10,17 +10,45 @@ import Kingfisher
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var myImageView: UIImageView!
-    var photoObj : Photo?
+    var recipeArr : [Recipe]? = []
+    @IBOutlet weak var recipeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        getData()
+        recipeTableView.dataSource  = self
+        getRecipeData()
+        getUserData()
     }
     
-    func getData() {
-        //"http://jsonplaceholder.typicode.com/photos")
+    func getRecipeData() {
+        print("before do block") // 1
+        let url = URL(string: "http://jsonplaceholder.typicode.com/photos")
+                // create a URLSession to handle the request tasks
+                let session = URLSession.shared
+                // create a "data task" to make the request and run completion handler
+                let task = session.dataTask(with: url!, completionHandler: {
+                    // see: Swift closure expression syntax
+                    data, response, error in
+                    
+                    do {
+                        print("inside do block") // 3
+                        self.recipeArr = try JSONDecoder().decode([Recipe].self, from:data!)
+                        DispatchQueue.main.async {
+                            self.recipeTableView.reloadData()
+                        }
+                        
+                    } catch {
+                        print(error)
+                    }
+                })
+                // execute the task and then wait for the response
+                // to run the completion handler. This is async!
+                print("after do block") // 2
+                task.resume()
+    }
+    
+    func getUserData() {
         print("before do block") // 1
         let url = URL(string: "http://jsonplaceholder.typicode.com/users")
                 // create a URLSession to handle the request tasks
@@ -32,19 +60,10 @@ class ViewController: UIViewController {
                     
                     do {
                         print("inside do block") // 3
-                        // try converting the JSON object to "Foundation Types" (NSDictionary, NSArray, NSString, etc.)
-                        
-                        // old way
-                        if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? [[String:Any]] {
-                            self.parseData(photoArray: jsonResult)
+                        let userArr = try JSONDecoder().decode([User].self, from:data!)
+                        DispatchQueue.main.async {
+                            print(userArr[0].address.geo.lat)
                         }
-                        
-                        // new way
-                        //let photoArray = try JSONDecoder().decode([Photo].self, from:data!)
-                        //self.parsePhotos(photos: photoArray)
-                        let userArray = try JSONDecoder().decode([User].self, from:data!)
-                        let user = userArray[0]
-                        print(user.address.geo.lat)
                         
                     } catch {
                         print(error)
@@ -55,42 +74,25 @@ class ViewController: UIViewController {
                 print("after do block") // 2
                 task.resume()
     }
+}
 
-    func parseData(photoArray:[[String:Any]]) {
-        let photoDict = photoArray[0]
-        if let thumbnailURL = photoDict["thumbnailUrl"] as? String,
-           let albumID = photoDict["albumId"] as? Int,
-           let url = URL(string: thumbnailURL) {
-            print(thumbnailURL)
-            print(albumID)
-            // create an array
-            //low priority
-
-            //Always update ui on main thread
-            DispatchQueue.main.async {
-                // higher priority stuff
-                self.myImageView.kf.setImage(with:url)
-                // reload table view
-            }
-        }
+extension ViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return recipeArr?.count ?? 0
     }
     
-    func parsePhotos(photos:[Photo]) {
-        let photoObj = photos[0]
-        print(photoObj.thumbnailUrl)
-        let url = URL(string: photoObj.thumbnailUrl)
-        DispatchQueue.main.async {
-            // higher priority stuff
-            self.myImageView.kf.setImage(with:url)
-            // reload table view
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
+        if let recipeObj = recipeArr?[indexPath.row] {
+            
+            let recipeName = recipeObj.title
+            let recipeURL = URL(string:recipeObj.thumbnailUrl)
+            
+            cell.receipeName.text = recipeName
+            cell.receipeImage.kf.setImage(with:recipeURL)
         }
+        return cell
     }
-    
-    func parseUser(users: [User]) {
-        let user = users[0]
-        print(user.address.geo.lat)
-    }
-
 }
 
 
