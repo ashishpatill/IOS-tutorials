@@ -24,55 +24,55 @@ class ViewController: UIViewController {
     func getRecipeData() {
         print("before do block") // 1
         let url = URL(string: "http://jsonplaceholder.typicode.com/photos")
-                // create a URLSession to handle the request tasks
-                let session = URLSession.shared
-                // create a "data task" to make the request and run completion handler
-                let task = session.dataTask(with: url!, completionHandler: {
-                    // see: Swift closure expression syntax
-                    data, response, error in
-                    
-                    do {
-                        print("inside do block") // 3
-                        self.recipeArr = try JSONDecoder().decode([Recipe].self, from:data!)
-                        DispatchQueue.main.async {
-                            self.recipeTableView.reloadData()
-                        }
-                        
-                    } catch {
-                        print(error)
-                    }
-                })
-                // execute the task and then wait for the response
-                // to run the completion handler. This is async!
-                print("after do block") // 2
-                task.resume()
+        // create a URLSession to handle the request tasks
+        let session = URLSession.shared
+        // create a "data task" to make the request and run completion handler
+        let task = session.dataTask(with: url!, completionHandler: {
+            // see: Swift closure expression syntax
+            data, response, error in
+            
+            do {
+                print("inside do block") // 3
+                self.recipeArr = try JSONDecoder().decode([Recipe].self, from:data!)
+                DispatchQueue.main.async {
+                    self.recipeTableView.reloadData()
+                }
+                
+            } catch {
+                print(error)
+            }
+        })
+        // execute the task and then wait for the response
+        // to run the completion handler. This is async!
+        print("after do block") // 2
+        task.resume()
     }
     
     func getUserData() {
         print("before do block") // 1
         let url = URL(string: "http://jsonplaceholder.typicode.com/users")
-                // create a URLSession to handle the request tasks
-                let session = URLSession.shared
-                // create a "data task" to make the request and run completion handler
-                let task = session.dataTask(with: url!, completionHandler: {
-                    // see: Swift closure expression syntax
-                    data, response, error in
-                    
-                    do {
-                        print("inside do block") // 3
-                        let userArr = try JSONDecoder().decode([User].self, from:data!)
-                        DispatchQueue.main.async {
-                            print(userArr[0].address.geo.lat)
-                        }
-                        
-                    } catch {
-                        print(error)
-                    }
-                })
-                // execute the task and then wait for the response
-                // to run the completion handler. This is async!
-                print("after do block") // 2
-                task.resume()
+        // create a URLSession to handle the request tasks
+        let session = URLSession.shared
+        // create a "data task" to make the request and run completion handler
+        let task = session.dataTask(with: url!, completionHandler: {
+            // see: Swift closure expression syntax
+            data, response, error in
+            
+            do {
+                print("inside do block") // 3
+                let userArr = try JSONDecoder().decode([User].self, from:data!)
+                DispatchQueue.main.async {
+                    print(userArr[0].address.geo.lat)
+                }
+                
+            } catch {
+                print(error)
+            }
+        })
+        // execute the task and then wait for the response
+        // to run the completion handler. This is async!
+        print("after do block") // 2
+        task.resume()
     }
 }
 
@@ -83,6 +83,7 @@ extension ViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
+        
         if let recipeObj = recipeArr?[indexPath.row] {
             
             let recipeName = recipeObj.title
@@ -98,5 +99,5 @@ extension ViewController : UITableViewDataSource {
 
 // task 1:- Call an api
 // task 2:- wait for response from api
-// task 3:- After response received :- Load the UI/ Refresh the UI
+// task 3:- After response received :- Load UI/ Refresh UI
 
