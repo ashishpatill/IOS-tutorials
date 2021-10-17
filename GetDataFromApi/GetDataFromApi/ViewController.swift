@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -18,10 +19,22 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         recipeTableView.dataSource  = self
         getRecipeData()
-        getUserData()
+        //getUserData()
+        //getRecipeDataWithAF()
+    }
+    
+    func getRecipeDataWithAF() {
+        AF.request("http://jsonplaceholder.typicode.com/photos").responseDecodable(of: [Recipe].self) { response in
+            //print(response.value)
+            self.recipeArr = response.value
+            DispatchQueue.main.async {
+                self.recipeTableView.reloadData()
+            }
+        }
     }
     
     func getRecipeData() {
+       
         print("before do block") // 1
         let url = URL(string: "http://jsonplaceholder.typicode.com/photos")
         // create a URLSession to handle the request tasks
@@ -46,6 +59,7 @@ class ViewController: UIViewController {
         // to run the completion handler. This is async!
         print("after do block") // 2
         task.resume()
+        
     }
     
     func getUserData() {

@@ -17,6 +17,7 @@
 		04A61E01271C070C0085E661 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E00271C070C0085E661 /* Recipe.swift */; };
 		04A61E03271C14420085E661 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E02271C14420085E661 /* User.swift */; };
 		04A61E05271C1C5D0085E661 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E04271C1C5D0085E661 /* RecipeCell.swift */; };
+		04A61E08271C3EAB0085E661 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04A61E07271C3EAB0085E661 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0423E9D0271855E9004D6D57 /* Kingfisher in Frameworks */,
+				04A61E08271C3EAB0085E661 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,7 @@
 			name = GetDataFromApi;
 			packageProductDependencies = (
 				0423E9CF271855E9004D6D57 /* Kingfisher */,
+				04A61E07271C3EAB0085E661 /* Alamofire */,
 			);
 			productName = GetDataFromApi;
 			productReference = 0423E9B727185053004D6D57 /* GetDataFromApi.app */;
@@ -127,6 +130,7 @@
 			mainGroup = 0423E9AE27185053004D6D57;
 			packageReferences = (
 				0423E9CE271855E9004D6D57 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				04A61E06271C3EAB0085E661 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 0423E9B827185053004D6D57 /* Products */;
 			projectDirPath = "";
@@ -390,6 +394,14 @@
 				kind = branch;
 			};
 		};
+		04A61E06271C3EAB0085E661 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -397,6 +409,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0423E9CE271855E9004D6D57 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		04A61E07271C3EAB0085E661 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04A61E06271C3EAB0085E661 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
