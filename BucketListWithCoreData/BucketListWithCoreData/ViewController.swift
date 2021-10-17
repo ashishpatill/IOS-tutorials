@@ -100,15 +100,12 @@ class ViewController: UIViewController {
         // read
         let request = NSFetchRequest<NSFetchRequestResult>.init(entityName: entityName)
         let predicate = NSPredicate.init(format: "name = %@", "ashish")
-        
         request.predicate = predicate
         do {
-            let result = try context.fetch(request)
-            let taskListFiltered = result as! [TaskListItem]
+            let result = try context.fetch(request).first
+            let task = result as! TaskListItem
+            task.name = "ashish 2"
             
-            for item in taskListFiltered {
-                item.name = "ashish 2"
-            }
             
             try context.save()
             readItem()
@@ -185,3 +182,5 @@ extension ViewController :UITableViewDataSource {
         return cell
     }
 }
+
+//
