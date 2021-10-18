@@ -27,10 +27,10 @@ class NetworkManager {
         }
     }
     
-    func getMoviesArr(successHandler:@escaping (_ data: Data?, _ response: URLResponse?) -> Void,
+    static func getMoviesArr(successHandler:@escaping (_ data: Data?, _ response: URLResponse?) -> Void,
                       errorHandler:@escaping (_ error: Error?) -> Void) {
         // Specify the url that we will be sending the GET Request to
-        let url = URL(string: "https://swapi.dev/api/people/?format=json")
+        let url = URL(string: "https://swapi.dev/api/films/?format=json")
         // Create a URLSession to handle the request tasks
         let session = URLSession.shared
         // Create a "data task" which will request some data from a URL and then run the completion handler that we are passing into the getAllPeople function itself
@@ -38,7 +38,7 @@ class NetworkManager {
             // see: Swift closure expression syntax
             data, response, error in
             
-            if error != nil {
+            if let error = error {
                 print(error)
                 errorHandler(error)
             } else {

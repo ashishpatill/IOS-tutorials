@@ -59,17 +59,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="bY6-kp-qUk">
+                                <rect key="frame" x="182" y="423" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="TKp-Uy-n4y"/>
+                                    <constraint firstAttribute="height" constant="50" id="kyo-VV-C3f"/>
+                                </constraints>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="kFN-ZB-xrJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9EI-zc-Rl2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="kFN-ZB-xrJ" secondAttribute="bottom" id="OEE-JV-KGl"/>
+                            <constraint firstItem="bY6-kp-qUk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TkZ-4i-csA"/>
+                            <constraint firstItem="bY6-kp-qUk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="av5-hw-S9W"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kFN-ZB-xrJ" secondAttribute="trailing" id="frs-cO-1Lc"/>
                             <constraint firstItem="kFN-ZB-xrJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xGj-ZZ-nxH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="bY6-kp-qUk" id="g6M-Jh-o74"/>
                         <outlet property="recipeTableView" destination="kFN-ZB-xrJ" id="UeS-V5-TEN"/>
                     </connections>
                 </viewController>

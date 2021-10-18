@@ -13,6 +13,8 @@ class ViewController: UIViewController {
 
     var recipeArr : [Recipe]? = []
     var movieArr : [String] = []
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var recipeTableView: UITableView!
     
     override func viewDidLoad() {
@@ -21,11 +23,13 @@ class ViewController: UIViewController {
         recipeTableView.dataSource  = self
         //getRecipeData()
         //getUserData()
-        //getRecipeDataWithAF()
-       getMovies()
+        //getMoviesWithAFAndVapor()
+       //getMoviesWithAF()
+       //getMovies()
+        getRecipeDataWithAF()
     }
     
-    func getMovies() {
+    func getMoviesWithAFAndVapor() {
         print ("Inside View controller before calling an api")
         NetworkManager.getMovies { movieResponse in
             if let response = movieResponse {
@@ -40,12 +44,33 @@ class ViewController: UIViewController {
             print(error?.localizedDescription ?? "")
         }
     }
+    
+//    func getMovies() {
+//        NetworkManager.getMoviesArr { data, response in
+//            if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
+//                if let results = jsonResult["results"] as? NSArray {
+//                    for person in results {
+//                        let personDict = person as! NSDictionary
+//                        self.people.append(personDict["name"]! as! String)
+//                    }
+//                }
+//            }
+//            DispatchQueue.main.async {
+//                self.tableView.reloadData()
+//            }
+//        } errorHandler: { error in
+//            print(error?.localizedDescription)
+//        }
+//    }
 
     func getRecipeDataWithAF() {
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
         AF.request("http://jsonplaceholder.typicode.com/photos").responseDecodable(of: [Recipe].self) { response in
             //print(response.value)
             self.recipeArr = response.value
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 self.recipeTableView.reloadData()
             }
         }
@@ -110,12 +135,12 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return movieArr.count
+        return recipeArr?.count ?? 0 //movieArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
-        /*
+        
         if let recipeObj = recipeArr?[indexPath.row] {
             
             let recipeName = recipeObj.title
@@ -123,9 +148,9 @@ extension ViewController : UITableViewDataSource {
             
             cell.receipeName.text = recipeName
             cell.receipeImage.kf.setImage(with:recipeURL)
-        }*/
+        }
         
-        cell.receipeName.text = movieArr[indexPath.row]
+        //cell.receipeName.text = movieArr[indexPath.row]
         return cell
     }
 }
