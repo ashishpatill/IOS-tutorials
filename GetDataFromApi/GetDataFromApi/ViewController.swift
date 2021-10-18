@@ -12,17 +12,35 @@ import Alamofire
 class ViewController: UIViewController {
 
     var recipeArr : [Recipe]? = []
+    var movieArr : [String] = []
     @IBOutlet weak var recipeTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         recipeTableView.dataSource  = self
-        getRecipeData()
+        //getRecipeData()
         //getUserData()
         //getRecipeDataWithAF()
+       getMovies()
     }
     
+    func getMovies() {
+        print ("Inside View controller before calling an api")
+        NetworkManager.getMovies { movieResponse in
+            if let response = movieResponse {
+                print ("Inside View controller success handler")
+                self.movieArr = response.movies
+                
+                DispatchQueue.main.async {
+                    self.recipeTableView.reloadData()
+                }
+            }
+        } errorHandler: { error in
+            print(error?.localizedDescription ?? "")
+        }
+    }
+
     func getRecipeDataWithAF() {
         AF.request("http://jsonplaceholder.typicode.com/photos").responseDecodable(of: [Recipe].self) { response in
             //print(response.value)
@@ -92,12 +110,12 @@ class ViewController: UIViewController {
 
 extension ViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipeArr?.count ?? 0
+        return movieArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as! RecipeCell
-        
+        /*
         if let recipeObj = recipeArr?[indexPath.row] {
             
             let recipeName = recipeObj.title
@@ -105,7 +123,9 @@ extension ViewController : UITableViewDataSource {
             
             cell.receipeName.text = recipeName
             cell.receipeImage.kf.setImage(with:recipeURL)
-        }
+        }*/
+        
+        cell.receipeName.text = movieArr[indexPath.row]
         return cell
     }
 }
@@ -115,3 +135,6 @@ extension ViewController : UITableViewDataSource {
 // task 2:- wait for response from api
 // task 3:- After response received :- Load UI/ Refresh UI
 
+struct MoviesRequest : Codable {
+    let genre : String
+}
