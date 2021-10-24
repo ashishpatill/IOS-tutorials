@@ -16,10 +16,13 @@
 		0423E9D0271855E9004D6D57 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0423E9CF271855E9004D6D57 /* Kingfisher */; };
 		049919A8271D4619006A24D0 /* MoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049919A7271D4619006A24D0 /* MoviesResponse.swift */; };
 		049919AA271D687F006A24D0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049919A9271D687F006A24D0 /* NetworkManager.swift */; };
+		04A02FE9271EEACB00E06095 /* MovieObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A02FE8271EEACB00E06095 /* MovieObject.swift */; };
 		04A61E01271C070C0085E661 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E00271C070C0085E661 /* Recipe.swift */; };
 		04A61E03271C14420085E661 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E02271C14420085E661 /* User.swift */; };
 		04A61E05271C1C5D0085E661 /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A61E04271C1C5D0085E661 /* RecipeCell.swift */; };
 		04A61E08271C3EAB0085E661 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04A61E07271C3EAB0085E661 /* Alamofire */; };
+		04C8EC6D272532E200CED0D6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8EC6C272532E200CED0D6 /* TaskModel.swift */; };
+		04C8EC6F272533AD00CED0D6 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04C8EC6E272533AD00CED0D6 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +36,12 @@
 		0423E9C827185054004D6D57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		049919A7271D4619006A24D0 /* MoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesResponse.swift; sourceTree = "<group>"; };
 		049919A9271D687F006A24D0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		04A02FE8271EEACB00E06095 /* MovieObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObject.swift; sourceTree = "<group>"; };
 		04A61E00271C070C0085E661 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		04A61E02271C14420085E661 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04A61E04271C1C5D0085E661 /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
+		04C8EC6C272532E200CED0D6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		04C8EC6E272533AD00CED0D6 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +83,10 @@
 				04A61E00271C070C0085E661 /* Recipe.swift */,
 				049919A7271D4619006A24D0 /* MoviesResponse.swift */,
 				04A61E02271C14420085E661 /* User.swift */,
+				04A02FE8271EEACB00E06095 /* MovieObject.swift */,
 				049919A9271D687F006A24D0 /* NetworkManager.swift */,
+				04C8EC6C272532E200CED0D6 /* TaskModel.swift */,
+				04C8EC6E272533AD00CED0D6 /* Task.swift */,
 				0423E9C027185053004D6D57 /* Main.storyboard */,
 				0423E9C327185054004D6D57 /* Assets.xcassets */,
 				0423E9C527185054004D6D57 /* LaunchScreen.storyboard */,
@@ -167,10 +176,13 @@
 			files = (
 				04A61E01271C070C0085E661 /* Recipe.swift in Sources */,
 				0423E9BF27185053004D6D57 /* ViewController.swift in Sources */,
+				04C8EC6D272532E200CED0D6 /* TaskModel.swift in Sources */,
 				0423E9BB27185053004D6D57 /* AppDelegate.swift in Sources */,
+				04C8EC6F272533AD00CED0D6 /* Task.swift in Sources */,
 				049919A8271D4619006A24D0 /* MoviesResponse.swift in Sources */,
 				049919AA271D687F006A24D0 /* NetworkManager.swift in Sources */,
 				04A61E05271C1C5D0085E661 /* RecipeCell.swift in Sources */,
+				04A02FE9271EEACB00E06095 /* MovieObject.swift in Sources */,
 				04A61E03271C14420085E661 /* User.swift in Sources */,
 				0423E9BD27185053004D6D57 /* SceneDelegate.swift in Sources */,
 			);
