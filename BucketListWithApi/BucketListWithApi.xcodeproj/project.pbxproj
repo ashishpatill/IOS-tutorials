@@ -18,6 +18,7 @@
 		04886AF327268BA000E6E4E6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AF227268BA000E6E4E6 /* TaskModel.swift */; };
 		04886AF627268D1D00E6E4E6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04886AF527268D1D00E6E4E6 /* Alamofire */; };
 		04886AF827268D5B00E6E4E6 /* TaskApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AF727268D5B00E6E4E6 /* TaskApiManager.swift */; };
+		04886AFD2726DD2900E6E4E6 /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 04886AFC2726DD2900E6E4E6 /* MBProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04886AFD2726DD2900E6E4E6 /* MBProgressHUD in Frameworks */,
 				04886AF627268D1D00E6E4E6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -115,6 +117,7 @@
 			name = BucketListWithApi;
 			packageProductDependencies = (
 				04886AF527268D1D00E6E4E6 /* Alamofire */,
+				04886AFC2726DD2900E6E4E6 /* MBProgressHUD */,
 			);
 			productName = BucketListWithApi;
 			productReference = 04886AD7272682B000E6E4E6 /* BucketListWithApi.app */;
@@ -146,6 +149,7 @@
 			mainGroup = 04886ACE272682B000E6E4E6;
 			packageReferences = (
 				04886AF427268D1D00E6E4E6 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04886AFB2726DD2900E6E4E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 			);
 			productRefGroup = 04886AD8272682B000E6E4E6 /* Products */;
 			projectDirPath = "";
@@ -410,6 +414,14 @@
 				kind = branch;
 			};
 		};
+		04886AFB2726DD2900E6E4E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,6 +429,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04886AF427268D1D00E6E4E6 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		04886AFC2726DD2900E6E4E6 /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04886AFB2726DD2900E6E4E6 /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

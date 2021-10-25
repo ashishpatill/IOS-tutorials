@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class TaskListVC: UIViewController {
 
@@ -34,13 +35,30 @@ class TaskListVC: UIViewController {
     }
     
     func getAllTasks() {
+        let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        loader.label.text = "Fetching tasks..."
+        
         TaskApiManager.getAllTasks { taskList, error in
             guard let tasks = taskList else { return }
             self.taskList = tasks
             DispatchQueue.main.async {
+                self.showCustomLoader(loader: loader)
                 self.TaskTableView.reloadData()
             }
         }
+    }
+    
+    func showCustomLoader(loader:MBProgressHUD) {
+        loader.mode = .customView
+        loader.customView = UIImageView.init(image: UIImage.init(systemName: "checkmark"))
+        loader.label.text = "Done"
+        loader.isSquare = true
+        self.perform(#selector(self.hideLoader), with: nil, afterDelay: 2.0)
+    }
+    
+    @objc func hideLoader() {
+        MBProgressHUD.hide(for: self.view, animated: true)
     }
 
     @IBAction func addTask(_ sender: UIButton) {

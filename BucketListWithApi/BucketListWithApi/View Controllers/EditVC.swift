@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import MBProgressHUD
 
 protocol EditVCDelegate: NSObjectProtocol {
     func taskCreated()
@@ -52,6 +53,8 @@ class EditVC: UIViewController {
         // check if textfield has text
         guard let objective = taskTextField.text else { return }
         
+        let loader = MBProgressHUD.showAdded(to: self.view, animated: true)
+        loader.label.text = "Creating a task..."
         TaskApiManager.addTask(objective: objective) { task, error in
             // error handling
             // you can show error with alert controller
@@ -64,6 +67,9 @@ class EditVC: UIViewController {
             
             self.delegate?.taskCreated()
             DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+                
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -75,6 +81,8 @@ class EditVC: UIViewController {
         guard let objective = taskTextField.text else { return }
         guard let taskItem = taskItem else { return }
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
         TaskApiManager.updateTask(id: taskItem.id, objective: objective) { task, error in
             // error handling
             // you can show error with alert controller
@@ -85,6 +93,7 @@ class EditVC: UIViewController {
             
             self.delegate?.taskCreated()
             DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
                 self.navigationController?.popViewController(animated: true)
             }
         }
