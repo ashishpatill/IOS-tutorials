@@ -7,116 +7,135 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04976935271558FF0089E1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04976934271558FF0089E1FE /* AppDelegate.swift */; };
-		04976937271558FF0089E1FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04976936271558FF0089E1FE /* SceneDelegate.swift */; };
-		04976939271558FF0089E1FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04976938271558FF0089E1FE /* ViewController.swift */; };
-		0497693C271558FF0089E1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0497693A271558FF0089E1FE /* Main.storyboard */; };
-		04976941271559000089E1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04976940271559000089E1FE /* Assets.xcassets */; };
-		04976944271559000089E1FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04976942271559000089E1FE /* LaunchScreen.storyboard */; };
-		0497694C27155C1B0089E1FE /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0497694B27155C1B0089E1FE /* TaskCell.swift */; };
-		0497694F271562300089E1FE /* TaskList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0497694D271562300089E1FE /* TaskList.xcdatamodeld */; };
-		04C8EC72272578CB00CED0D6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04C8EC71272578CB00CED0D6 /* FirebaseAuth */; };
-		04C8EC74272578CB00CED0D6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04C8EC73272578CB00CED0D6 /* FirebaseFirestore */; };
+		04886ADB272682B000E6E4E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886ADA272682B000E6E4E6 /* AppDelegate.swift */; };
+		04886ADD272682B000E6E4E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886ADC272682B000E6E4E6 /* SceneDelegate.swift */; };
+		04886ADF272682B000E6E4E6 /* TaskListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886ADE272682B000E6E4E6 /* TaskListVC.swift */; };
+		04886AE2272682B000E6E4E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04886AE0272682B000E6E4E6 /* Main.storyboard */; };
+		04886AE4272682B100E6E4E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04886AE3272682B100E6E4E6 /* Assets.xcassets */; };
+		04886AE7272682B100E6E4E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04886AE5272682B100E6E4E6 /* LaunchScreen.storyboard */; };
+		04886AEF2726861200E6E4E6 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AEE2726861200E6E4E6 /* TaskCell.swift */; };
+		04886AF12726889200E6E4E6 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AF02726889200E6E4E6 /* EditVC.swift */; };
+		04886AF327268BA000E6E4E6 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AF227268BA000E6E4E6 /* TaskModel.swift */; };
+		04886AF627268D1D00E6E4E6 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04886AF527268D1D00E6E4E6 /* Alamofire */; };
+		04886AF827268D5B00E6E4E6 /* TaskApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04886AF727268D5B00E6E4E6 /* TaskApiManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04976931271558FF0089E1FE /* BucketListWithCoreData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketListWithCoreData.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		04976934271558FF0089E1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		04976936271558FF0089E1FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04976938271558FF0089E1FE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0497693B271558FF0089E1FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		04976940271559000089E1FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		04976943271559000089E1FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04976945271559000089E1FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0497694B27155C1B0089E1FE /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
-		0497694E271562300089E1FE /* TaskList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskList.xcdatamodel; sourceTree = "<group>"; };
+		04886AD7272682B000E6E4E6 /* BucketListWithApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketListWithApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04886ADA272682B000E6E4E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		04886ADC272682B000E6E4E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		04886ADE272682B000E6E4E6 /* TaskListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListVC.swift; sourceTree = "<group>"; };
+		04886AE1272682B000E6E4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		04886AE3272682B100E6E4E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04886AE6272682B100E6E4E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		04886AE8272682B100E6E4E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04886AEE2726861200E6E4E6 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		04886AF02726889200E6E4E6 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
+		04886AF227268BA000E6E4E6 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		04886AF727268D5B00E6E4E6 /* TaskApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskApiManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0497692E271558FF0089E1FE /* Frameworks */ = {
+		04886AD4272682B000E6E4E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C8EC72272578CB00CED0D6 /* FirebaseAuth in Frameworks */,
-				04C8EC74272578CB00CED0D6 /* FirebaseFirestore in Frameworks */,
+				04886AF627268D1D00E6E4E6 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04976928271558FF0089E1FE = {
+		04886ACE272682B000E6E4E6 = {
 			isa = PBXGroup;
 			children = (
-				04976933271558FF0089E1FE /* BucketListWithCoreData */,
-				04976932271558FF0089E1FE /* Products */,
+				04886AD9272682B000E6E4E6 /* BucketListWithApi */,
+				04886AD8272682B000E6E4E6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		04976932271558FF0089E1FE /* Products */ = {
+		04886AD8272682B000E6E4E6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				04976931271558FF0089E1FE /* BucketListWithCoreData.app */,
+				04886AD7272682B000E6E4E6 /* BucketListWithApi.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		04976933271558FF0089E1FE /* BucketListWithCoreData */ = {
+		04886AD9272682B000E6E4E6 /* BucketListWithApi */ = {
 			isa = PBXGroup;
 			children = (
-				04976934271558FF0089E1FE /* AppDelegate.swift */,
-				0497694D271562300089E1FE /* TaskList.xcdatamodeld */,
-				04976936271558FF0089E1FE /* SceneDelegate.swift */,
-				04976938271558FF0089E1FE /* ViewController.swift */,
-				0497694B27155C1B0089E1FE /* TaskCell.swift */,
-				0497693A271558FF0089E1FE /* Main.storyboard */,
-				04976940271559000089E1FE /* Assets.xcassets */,
-				04976942271559000089E1FE /* LaunchScreen.storyboard */,
-				04976945271559000089E1FE /* Info.plist */,
+				04886ADA272682B000E6E4E6 /* AppDelegate.swift */,
+				04886ADC272682B000E6E4E6 /* SceneDelegate.swift */,
+				04886AFA27268E1700E6E4E6 /* View Controllers */,
+				04886AEE2726861200E6E4E6 /* TaskCell.swift */,
+				04886AF927268E0200E6E4E6 /* Api */,
+				04886AE0272682B000E6E4E6 /* Main.storyboard */,
+				04886AE3272682B100E6E4E6 /* Assets.xcassets */,
+				04886AE5272682B100E6E4E6 /* LaunchScreen.storyboard */,
+				04886AE8272682B100E6E4E6 /* Info.plist */,
 			);
-			path = BucketListWithCoreData;
+			path = BucketListWithApi;
+			sourceTree = "<group>";
+		};
+		04886AF927268E0200E6E4E6 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				04886AF727268D5B00E6E4E6 /* TaskApiManager.swift */,
+				04886AF227268BA000E6E4E6 /* TaskModel.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		04886AFA27268E1700E6E4E6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04886ADE272682B000E6E4E6 /* TaskListVC.swift */,
+				04886AF02726889200E6E4E6 /* EditVC.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		04976930271558FF0089E1FE /* BucketListWithCoreData */ = {
+		04886AD6272682B000E6E4E6 /* BucketListWithApi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 04976948271559000089E1FE /* Build configuration list for PBXNativeTarget "BucketListWithCoreData" */;
+			buildConfigurationList = 04886AEB272682B100E6E4E6 /* Build configuration list for PBXNativeTarget "BucketListWithApi" */;
 			buildPhases = (
-				0497692D271558FF0089E1FE /* Sources */,
-				0497692E271558FF0089E1FE /* Frameworks */,
-				0497692F271558FF0089E1FE /* Resources */,
+				04886AD3272682B000E6E4E6 /* Sources */,
+				04886AD4272682B000E6E4E6 /* Frameworks */,
+				04886AD5272682B000E6E4E6 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = BucketListWithCoreData;
+			name = BucketListWithApi;
 			packageProductDependencies = (
-				04C8EC71272578CB00CED0D6 /* FirebaseAuth */,
-				04C8EC73272578CB00CED0D6 /* FirebaseFirestore */,
+				04886AF527268D1D00E6E4E6 /* Alamofire */,
 			);
-			productName = BucketListWithCoreData;
-			productReference = 04976931271558FF0089E1FE /* BucketListWithCoreData.app */;
+			productName = BucketListWithApi;
+			productReference = 04886AD7272682B000E6E4E6 /* BucketListWithApi.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		04976929271558FF0089E1FE /* Project object */ = {
+		04886ACF272682B000E6E4E6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					04976930271558FF0089E1FE = {
+					04886AD6272682B000E6E4E6 = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 0497692C271558FF0089E1FE /* Build configuration list for PBXProject "BucketListWithCoreData" */;
+			buildConfigurationList = 04886AD2272682B000E6E4E6 /* Build configuration list for PBXProject "BucketListWithApi" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,60 +143,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 04976928271558FF0089E1FE;
+			mainGroup = 04886ACE272682B000E6E4E6;
 			packageReferences = (
-				04C8EC70272578CB00CED0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				04886AF427268D1D00E6E4E6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
-			productRefGroup = 04976932271558FF0089E1FE /* Products */;
+			productRefGroup = 04886AD8272682B000E6E4E6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				04976930271558FF0089E1FE /* BucketListWithCoreData */,
+				04886AD6272682B000E6E4E6 /* BucketListWithApi */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0497692F271558FF0089E1FE /* Resources */ = {
+		04886AD5272682B000E6E4E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04976944271559000089E1FE /* LaunchScreen.storyboard in Resources */,
-				04976941271559000089E1FE /* Assets.xcassets in Resources */,
-				0497693C271558FF0089E1FE /* Main.storyboard in Resources */,
+				04886AE7272682B100E6E4E6 /* LaunchScreen.storyboard in Resources */,
+				04886AE4272682B100E6E4E6 /* Assets.xcassets in Resources */,
+				04886AE2272682B000E6E4E6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0497692D271558FF0089E1FE /* Sources */ = {
+		04886AD3272682B000E6E4E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0497694F271562300089E1FE /* TaskList.xcdatamodeld in Sources */,
-				04976939271558FF0089E1FE /* ViewController.swift in Sources */,
-				04976935271558FF0089E1FE /* AppDelegate.swift in Sources */,
-				04976937271558FF0089E1FE /* SceneDelegate.swift in Sources */,
-				0497694C27155C1B0089E1FE /* TaskCell.swift in Sources */,
+				04886AF12726889200E6E4E6 /* EditVC.swift in Sources */,
+				04886AEF2726861200E6E4E6 /* TaskCell.swift in Sources */,
+				04886ADF272682B000E6E4E6 /* TaskListVC.swift in Sources */,
+				04886ADB272682B000E6E4E6 /* AppDelegate.swift in Sources */,
+				04886AF827268D5B00E6E4E6 /* TaskApiManager.swift in Sources */,
+				04886ADD272682B000E6E4E6 /* SceneDelegate.swift in Sources */,
+				04886AF327268BA000E6E4E6 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0497693A271558FF0089E1FE /* Main.storyboard */ = {
+		04886AE0272682B000E6E4E6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0497693B271558FF0089E1FE /* Base */,
+				04886AE1272682B000E6E4E6 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		04976942271559000089E1FE /* LaunchScreen.storyboard */ = {
+		04886AE5272682B100E6E4E6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				04976943271559000089E1FE /* Base */,
+				04886AE6272682B100E6E4E6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -185,7 +206,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		04976946271559000089E1FE /* Debug */ = {
+		04886AE9272682B100E6E4E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -246,7 +267,7 @@
 			};
 			name = Debug;
 		};
-		04976947271559000089E1FE /* Release */ = {
+		04886AEA272682B100E6E4E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +322,7 @@
 			};
 			name = Release;
 		};
-		04976949271559000089E1FE /* Debug */ = {
+		04886AEC272682B100E6E4E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -310,7 +331,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3BYY9V27X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BucketListWithCoreData/Info.plist;
+				INFOPLIST_FILE = BucketListWithApi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +342,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashishpisey.BucketListWithCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ashishpisey.BucketListWithApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -329,7 +350,7 @@
 			};
 			name = Debug;
 		};
-		0497694A271559000089E1FE /* Release */ = {
+		04886AED272682B100E6E4E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -338,7 +359,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3BYY9V27X7;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BucketListWithCoreData/Info.plist;
+				INFOPLIST_FILE = BucketListWithApi/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -349,7 +370,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ashishpisey.BucketListWithCoreData;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ashishpisey.BucketListWithApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -360,20 +381,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0497692C271558FF0089E1FE /* Build configuration list for PBXProject "BucketListWithCoreData" */ = {
+		04886AD2272682B000E6E4E6 /* Build configuration list for PBXProject "BucketListWithApi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04976946271559000089E1FE /* Debug */,
-				04976947271559000089E1FE /* Release */,
+				04886AE9272682B100E6E4E6 /* Debug */,
+				04886AEA272682B100E6E4E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		04976948271559000089E1FE /* Build configuration list for PBXNativeTarget "BucketListWithCoreData" */ = {
+		04886AEB272682B100E6E4E6 /* Build configuration list for PBXNativeTarget "BucketListWithApi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				04976949271559000089E1FE /* Debug */,
-				0497694A271559000089E1FE /* Release */,
+				04886AEC272682B100E6E4E6 /* Debug */,
+				04886AED272682B100E6E4E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -381,41 +402,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04C8EC70272578CB00CED0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		04886AF427268D1D00E6E4E6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04C8EC71272578CB00CED0D6 /* FirebaseAuth */ = {
+		04886AF527268D1D00E6E4E6 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04C8EC70272578CB00CED0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		04C8EC73272578CB00CED0D6 /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 04C8EC70272578CB00CED0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
+			package = 04886AF427268D1D00E6E4E6 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		0497694D271562300089E1FE /* TaskList.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0497694E271562300089E1FE /* TaskList.xcdatamodel */,
-			);
-			currentVersion = 0497694E271562300089E1FE /* TaskList.xcdatamodel */;
-			path = TaskList.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 04976929271558FF0089E1FE /* Project object */;
+	rootObject = 04886ACF272682B000E6E4E6 /* Project object */;
 }
