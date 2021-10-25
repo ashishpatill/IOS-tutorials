@@ -36,18 +36,7 @@ class ViewController: UIViewController {
         //getTasks()
     }
     
-    func addTasks() {
-        TaskModel.addTask(objective: "Go to the garden 3", completionHandler: { task, error in
-                guard let task = task else {
-                    print("Error: \(error?.localizedDescription ?? "")")
-                    return
-                }
-                print(task.objective)
-                print(task.id)
-                self.getTasks()
-        })
-    }
-    
+    //MARK:- Get all Tasks method
     func getTasks() {
         TaskModel.getAllTasks { taskList, error in
             guard let taskArr = taskList else {
@@ -62,6 +51,20 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK:- Add a Task with create method
+    func addTasks() {
+        TaskModel.addTask(objective: "Go to the garden 3", completionHandler: { task, error in
+                guard let task = task else {
+                    print("Error: \(error?.localizedDescription ?? "")")
+                    return
+                }
+                print(task.objective)
+                print(task.id)
+                self.getTasks()
+        })
+    }
+    
+    //MARK:- Update Task
     func updateTask(id: Int, objective:String) {
         TaskModel.updateTask(id:id, objective: objective, completionHandler: { task, error in
                 guard let task = task else {
@@ -95,6 +98,7 @@ class ViewController: UIViewController {
 //        }
 //    }
     
+    //MARK:- Get movies api
     func getMovies() {
         self.activityIndicator.startAnimating()
         NetworkManager.getMovies (successHandler: { task in
@@ -112,6 +116,7 @@ class ViewController: UIViewController {
         })
     }
 
+    //MARK:- Get Recipe Data with Alamofire
     func getRecipeDataWithAF() {
         activityIndicator.startAnimating()
         AF.request("http://jsonplaceholder.typicode.com/photos").responseDecodable(of: [Recipe].self) { response in
@@ -125,6 +130,7 @@ class ViewController: UIViewController {
         }
     }
     
+    //MARK:- Get Recipe Data with URL session
     func getRecipeData() {
        
         print("before do block") // 1
@@ -157,6 +163,7 @@ class ViewController: UIViewController {
         
     }
     
+    //MARK:- Get User Data with URL session
     func getUserData() {
         print("before do block") // 1
         let url = URL(string: "http://jsonplaceholder.typicode.com/users")
