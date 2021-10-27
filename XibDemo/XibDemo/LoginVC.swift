@@ -1,0 +1,63 @@
+//
+//  LoginVC.swift
+//  XibDemo
+//
+//  Created by Ashish Pisey on 27/10/21.
+//
+
+import UIKit
+
+class LoginVC: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        createLabelWithAnchor()
+    }
+
+    @IBAction func GoToHome(_ sender: UIButton) {
+        let homeVC = HomeVC.init(nibName: "HomeVC", bundle: nil)
+        self.navigationController?.pushViewController(homeVC, animated: true)
+    }
+    
+    func createLabelWithAnchor() {
+        //let labelFrame = CGRect.init(x: 0, y: 0, width: 60, height: 60)
+        let label = UILabel()
+        label.text = "Anchor label"
+        self.view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        label.textAlignment = .center
+        label.backgroundColor = .yellow
+        NSLayoutConstraint.activate([
+            label.widthAnchor.constraint(equalToConstant: 300),
+            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
+            label.heightAnchor.constraint(equalToConstant: 90)
+        ])
+        
+        let tf = UITextField()
+        tf.text = "This is a TextField"
+        tf.layer.borderWidth = 20
+        self.view.addSubview(tf)
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        
+        NSLayoutConstraint.activate([
+            tf.widthAnchor.constraint(equalToConstant: 300),
+            tf.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            tf.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 20),
+            tf.heightAnchor.constraint(equalToConstant: 50)
+        ])
+
+    }
+    
+    func createLabel() {
+        let labelFrame = CGRect.init(x: 0, y: 40, width: 60, height: 60)
+        let label = UILabel.init(frame: labelFrame)
+        label.center = CGPoint.init(x: self.view.center.x, y: labelFrame.origin.y)
+        label.text = "Hello"
+        self.view.addSubview(label)
+    }
+
+}
