@@ -16,3 +16,4 @@ profile
 *.moved-aside
 DerivedData
 .idea/
+FireMessenger/FireMessenger/GoogleService-Info.plist
