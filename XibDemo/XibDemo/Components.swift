@@ -20,31 +20,32 @@ class CustomTextField : UITextField {
         super.init(frame: .zero)
         
         borderStyle = .roundedRect
-//        font = .systemFont(ofSize: 16)
-//        textColor = .black
-//        tintColor = .black
-//        keyboardAppearance = .dark
-//        keyboardType = .default
-//
-//        var placeholderTxt = ""
-//        switch tfType {
-//            case .email:
-//                placeholderTxt = "Enter a valid email"
-//                keyboardType = .emailAddress
-//                autocapitalizationType = .none
-//            case .name:
-//                keyboardType = .namePhonePad
-//                placeholderTxt = "Enter your name"
-//            case .username:
-//                keyboardType = .namePhonePad
-//                placeholderTxt = "Enter an username"
-//            case .password:
-//                placeholderTxt = "Enter a password"
-//                keyboardType = .default
-//                isSecureTextEntry = true
-//        }
-//        attributedPlaceholder = NSAttributedString(string: placeholderTxt,
-//                                                   attributes: [.foregroundColor: UIColor.lightGray])
+        font = .systemFont(ofSize: 16)
+        textColor = .black
+        tintColor = .black
+        keyboardAppearance = .dark
+        keyboardType = .default
+
+        var placeholderTxt = ""
+        switch tfType {
+            case .email:
+                placeholderTxt = "Enter a valid email"
+                keyboardType = .emailAddress
+                autocapitalizationType = .none
+            case .name:
+                keyboardType = .namePhonePad
+                placeholderTxt = "Enter your name"
+            case .username:
+                keyboardType = .namePhonePad
+                placeholderTxt = "Enter an username"
+            case .password:
+                placeholderTxt = "Enter a password"
+                keyboardType = .default
+                isSecureTextEntry = true
+        }
+        
+        attributedPlaceholder = NSAttributedString(string: placeholderTxt,
+                                                   attributes: [.foregroundColor: UIColor.lightGray])
     }
     
     required init?(coder: NSCoder) {
