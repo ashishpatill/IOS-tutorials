@@ -17,6 +17,7 @@
 		04E08070272938490035E938 /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0806E272938490035E938 /* HomeVC.xib */; };
 		04E0807327293AB40035E938 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E0807127293AB40035E938 /* TaskCell.swift */; };
 		04E0807427293AB40035E938 /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04E0807227293AB40035E938 /* TaskCell.xib */; };
+		04E08076272962B50035E938 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E08075272962B50035E938 /* Components.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		04E0806E272938490035E938 /* HomeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
 		04E0807127293AB40035E938 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
 		04E0807227293AB40035E938 /* TaskCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCell.xib; sourceTree = "<group>"; };
+		04E08075272962B50035E938 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				04E080552729370C0035E938 /* AppDelegate.swift */,
 				04E080572729370C0035E938 /* SceneDelegate.swift */,
+				04E08075272962B50035E938 /* Components.swift */,
 				04E08069272937450035E938 /* LoginVC.swift */,
 				04E0806A272937460035E938 /* LoginVC.xib */,
 				04E0806D272938490035E938 /* HomeVC.swift */,
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04E080562729370C0035E938 /* AppDelegate.swift in Sources */,
+				04E08076272962B50035E938 /* Components.swift in Sources */,
 				04E0806F272938490035E938 /* HomeVC.swift in Sources */,
 				04E080582729370C0035E938 /* SceneDelegate.swift in Sources */,
 				04E0806B272937460035E938 /* LoginVC.swift in Sources */,

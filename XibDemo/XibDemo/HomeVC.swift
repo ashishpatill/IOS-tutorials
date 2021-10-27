@@ -8,11 +8,14 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
+    private let userNameTF = CustomTextField(tfType: .username)
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        Helper.createTextFieldWithAnchor(tf: userNameTF, view: self.view)
     }
 
 
