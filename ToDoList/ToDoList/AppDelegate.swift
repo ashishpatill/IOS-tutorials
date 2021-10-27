@@ -1,12 +1,11 @@
 //
 //  AppDelegate.swift
-//  FireMessenger
+//  ToDoList
 //
-//  Created by Ashish Pisey on 20/10/21.
+//  Created by Ashish Pisey on 04/10/21.
 //
 
 import UIKit
-import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
         return true
     }
 
