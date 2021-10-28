@@ -40,6 +40,7 @@ class LoginVC: UIViewController {
                                                        emailTf,
                                                        loginButton])
         stackview.axis = .vertical
+        stackview.distribution = .equalSpacing
         stackview.spacing = 16
         view.addSubview(stackview)
         
