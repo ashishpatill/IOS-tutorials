@@ -12,13 +12,23 @@ class LoginVC: UIViewController {
     var label : UILabel?
     
     lazy var emailTf = CustomTextField(tfType: .email)
+    lazy var loginButton = CustomButton(bgColor: .blue, title: "Login", cornerRadius: 8)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        setupUI()
+    }
+    
+    func setupUI() {
+        
         createLabelWithAnchor()
         Helper.createTextFieldWithAnchor(tf: emailTf, view: self.view)
+        
+        let buttonFrame = CGRect.init(x: 0, y: 200, width: 300, height: 30)
+        Helper.createButtonWithAnchor(btn: loginButton, view: view, frame: buttonFrame)
     }
 
     @IBAction func GoToHome(_ sender: UIButton) {

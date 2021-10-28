@@ -10,6 +10,8 @@ import UIKit
 class HomeVC: UIViewController {
     
     private let userNameTF = CustomTextField(tfType: .username)
+    lazy var button = CustomButton(bgColor: .blue, title: "Register", cornerRadius: 8)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
