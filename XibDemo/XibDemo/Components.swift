@@ -68,6 +68,7 @@ class CustomTextField : UITextField {
     }
 }
 
+/*
 class Helper {
     static func createTextFieldWithAnchor(tf:UITextField, view:UIView) {
         tf.frame = CGRect.init(x: 60, y: 200, width: 300, height: 30)
@@ -96,4 +97,5 @@ class Helper {
             btn.heightAnchor.constraint(equalToConstant: frame.size.height)
         ])
     }
+ */
 }
