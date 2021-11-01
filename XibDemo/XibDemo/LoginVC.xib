@@ -16,22 +16,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdz-7y-xYm">
-                    <rect key="frame" x="156.5" y="432.5" width="101.5" height="31"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Go to Home"/>
-                    <connections>
-                        <action selector="GoToHome:" destination="-1" eventType="touchUpInside" id="7NH-eC-5pT"/>
-                    </connections>
-                </button>
-            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-            <constraints>
-                <constraint firstItem="Qdz-7y-xYm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xml-C0-ex5"/>
-                <constraint firstItem="Qdz-7y-xYm" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="bas-ml-6RU"/>
-            </constraints>
             <point key="canvasLocation" x="-122" y="-51"/>
         </view>
     </objects>

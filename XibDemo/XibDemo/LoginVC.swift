@@ -12,7 +12,11 @@ class LoginVC: UIViewController {
     var label : UILabel?
     
     lazy var emailTf = CustomTextField(tfType: .email)
-    lazy var loginButton = CustomButton(bgColor: .blue, title: "Login", cornerRadius: 8)
+    lazy var loginButton:CustomButton = {
+        let button = CustomButton(bgColor: .blue, title: "Login", cornerRadius: 8)
+        button.addTarget(self, action: #selector(login), for: .touchUpInside)
+        return button
+    }()
     
     lazy var titleLabel: UILabel = {
         let label = UILabel.init(frame: .zero)
@@ -53,43 +57,13 @@ class LoginVC: UIViewController {
         ])
     }
     
-//    func setupButton() {
-//        let buttonFrame = CGRect.init(x: 0, y: 200, width: 300, height: 30)
-//        Helper.createButtonWithAnchor(btn: loginButton, view: view, frame: buttonFrame)
-//    }
-
     @IBAction func GoToHome(_ sender: UIButton) {
         let homeVC = HomeVC.init(nibName: "HomeVC", bundle: nil)
         self.navigationController?.pushViewController(homeVC, animated: true)
     }
     
-    /*
-    func createLabelWithAnchor() {
-        //let labelFrame = CGRect.init(x: 0, y: 0, width: 60, height: 60)
-        label = UILabel()
-        guard let label = label else { return }
-        label.text = "Anchor label"
-        self.view.addSubview(label)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .center
-        label.backgroundColor = .yellow
+    @objc func login() {
         
-        
-        NSLayoutConstraint.activate([
-            label.widthAnchor.constraint(equalToConstant: 300),
-            label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 50),
-            label.heightAnchor.constraint(equalToConstant: 90)
-        ])
     }
-    
-    func createLabel() {
-        let labelFrame = CGRect.init(x: 0, y: 40, width: 60, height: 60)
-        let label = UILabel.init(frame: labelFrame)
-        label.center = CGPoint.init(x: self.view.center.x, y: labelFrame.origin.y)
-        label.text = "Hello"
-        self.view.addSubview(label)
-    }
-    */
 
 }
