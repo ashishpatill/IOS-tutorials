@@ -16,6 +16,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if Auth.auth().currentUser?.uid != nil {
+            self.goToSecondVC()
+        }
+        
     }
 
     @IBAction func loginWithFB(_ sender: UIButton) {
@@ -48,19 +52,21 @@ extension ViewController {
             Auth.auth().signIn(with: fbCredential) { result, error in
                // guard let `self` = self else { return }
 
-                if let error = error {
+                guard let result = result else {
                     print("errror with fb login")
-                    //self.showError(error.localizedDescription)
                     return
                 }
                 
-                // store the email in userdefaults
-                DispatchQueue.main.async {
-                    // show conversations
-                    let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
-                    self.navigationController?.pushViewController(secondVC, animated: true)
-                }
+                self.goToSecondVC()
             }
+        }
+    }
+    
+    func goToSecondVC() {
+        DispatchQueue.main.async {
+            // show conversations
+            let secondVC = self.storyboard?.instantiateViewController(withIdentifier: "SecondVC") as! SecondViewController
+            self.navigationController?.pushViewController(secondVC, animated: true)
         }
     }
     
