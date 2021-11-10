@@ -17,3 +17,5 @@ profile
 DerivedData
 .idea/
 FireMessenger/FireMessenger/GoogleService-Info.plist
+FBLogin/FBLogin/GoogleService-Info.plist
+FBLogin/FBLogin/Info.plist

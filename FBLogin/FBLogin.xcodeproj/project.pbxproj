@@ -24,7 +24,8 @@
 		046EB69D273A5DDA00F69F6C /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EB69C273A5DDA00F69F6C /* DatabaseManager.swift */; };
 		046EB69F273A61B900F69F6C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046EB69E273A61B900F69F6C /* Constants.swift */; };
 		046EB6A6273A890E00F69F6C /* TaskModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 046EB6A4273A890E00F69F6C /* TaskModel.xcdatamodeld */; };
-		0472DF34273BA85D00F80593 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0472DF33273BA85D00F80593 /* Info.plist */; };
+		0472DF37273BA8FD00F80593 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0472DF35273BA8FD00F80593 /* Info.plist */; };
+		0472DF38273BA8FD00F80593 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0472DF36273BA8FD00F80593 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,8 @@
 		046EB69C273A5DDA00F69F6C /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		046EB69E273A61B900F69F6C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		046EB6A5273A890E00F69F6C /* TaskModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TaskModel.xcdatamodel; sourceTree = "<group>"; };
-		0472DF33273BA85D00F80593 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0472DF35273BA8FD00F80593 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0472DF36273BA8FD00F80593 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +91,8 @@
 				046EB67A273A51BE00F69F6C /* Main.storyboard */,
 				046EB67D273A51BF00F69F6C /* Assets.xcassets */,
 				046EB67F273A51BF00F69F6C /* LaunchScreen.storyboard */,
-				0472DF33273BA85D00F80593 /* Info.plist */,
+				0472DF36273BA8FD00F80593 /* GoogleService-Info.plist */,
+				0472DF35273BA8FD00F80593 /* Info.plist */,
 			);
 			path = FBLogin;
 			sourceTree = "<group>";
@@ -165,8 +168,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0472DF34273BA85D00F80593 /* Info.plist in Resources */,
+				0472DF37273BA8FD00F80593 /* Info.plist in Resources */,
 				046EB681273A51BF00F69F6C /* LaunchScreen.storyboard in Resources */,
+				0472DF38273BA8FD00F80593 /* GoogleService-Info.plist in Resources */,
 				046EB67E273A51BF00F69F6C /* Assets.xcassets in Resources */,
 				046EB67C273A51BE00F69F6C /* Main.storyboard in Resources */,
 			);
