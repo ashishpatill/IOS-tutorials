@@ -26,14 +26,14 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb650434209285031</string>
+				<string>fbAppId</string>
 			</array>
 		</dict>
 	</array>
 	<key>FacebookAppID</key>
-	<string>650434209285031</string>
+	<string>AppId</string>
 	<key>FacebookClientToken</key>
-	<string>0644e397ccdea32e3a55fefde5502e35</string>
+	<string>ClientToken</string>
 	<key>FacebookDisplayName</key>
 	<string>Firebase App</string>
 </dict>
