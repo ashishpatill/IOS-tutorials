@@ -1,59 +1,59 @@
 # iOS Tutorials
 
-> A walk down memory lane — covering the basics of Swift and iOS, and a little bit of why this repo exists in the first place.
+A collection of small projects and demos from when I was first learning iOS development — mostly in Objective-C, some in Swift. Back when every concept felt like a mountain to climb.
 
 ---
 
-## A Little Nostalgia
+## Why This Repo Exists
 
-Before SwiftUI, before even Swift itself, iOS development was a different beast entirely.
+I started iOS development at a time when getting a button on screen meant understanding `[[UIButton alloc] initWithFrame:...]`, nesting views manually, and debugging `IBOutlet` connections that would silently fail. There was no SwiftUI, no live preview, and StackOverflow answers assumed you already knew ARC, blocks, and delegate patterns.
 
-We lived in the era of **Objective-C** — a language that looked more like sending a telegram than writing code. Picture this:
+This repo is just a humble collection of my early experiments — the small projects I built to understand one concept at a time. Nothing fancy, but each folder taught me something that I still carry today.
 
-```objc
-UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-[button setTitle:@"Tap Me" forState:UIControlStateNormal];
-[self.view addSubview:button];
-[button release];
+---
+
+## What's Inside
+
+| Project | What It Is | Why It Mattered |
+|---------|-----------|----------------|
+| **button demo** | Adding image insets to a UIButton | One of the first things I did — learning how to style a button, add padding, and make it not look terrible. Back then, even getting an image centered in a button required `UIEdgeInsets` and `CGRect` math. |
+| **XibDemo** | Login screen built with `.xib` files | `.xib` files were the standard way to design UI before Storyboards took over. You'd drag a button in Interface Builder, connect it via `IBOutlet`, wire the action via `IBAction`, and hope the connection stuck. This folder was my introduction to Interface Builder. |
+| **blockDemo** | Objective-C Blocks | Blocks in Objective-C were confusing. The syntax `^(void) { ... }` looked alien coming from C-style languages. This demo helped me understand what blocks are and how they're used for closures, completion handlers, and UI animations. |
+| **TableViewDemo** | `UITableView` basics | Table views were everywhere in iOS back then. Every app used `UITableView` for lists. Learning `numberOfRowsInSection`, `cellForRowAtIndexPath`, and cell reuse meant understanding the foundation of iOS list UI. |
+| **Tab bar navigation** | Tab bar controller with navigation | Tab bar controllers were (and still are) the go-to for navigation between major sections of an app. This demo covered wired-up tab bar controllers, navigation stack pushes, and how view controllers talk to each other. |
+| **ToDoList** | A simple todo app | My first real-ish app. CoreData or just an array — doesn't matter. What mattered was tying UI, data, and interaction together. It's where table views, navigation, and user input all come together. |
+| **Trie Algorithm.playground** | Trie data structure in a Swift playground | A Swift playground experiment implementing a Trie. This was when I was exploring data structures in Swift — learning the language while practicing algorithms. Playgrounds were a game changer for quick experimentation. |
+| **SwiftUIdemo** | First steps with SwiftUI | By the time SwiftUI came out, most of this repo was already Objective-C. This folder is where I dipped into the declarative future — `VStack`, `Text`, `Button`, and realizing how much simpler UI code could be. |
+
+---
+
+## A Glimpse Into How Things Were
+
+### Objective-C
+
+Most of the code here is written in **Objective-C** — the language that built iOS before Swift. The square brackets, the colons in method names, the `@"string"` literals, the `alloc/init/release` pattern. It reads like a telegram, but it forced you to understand memory, pointers, and the runtime in a way Swift abstracts away.
+
+### No CocoaPods (at first)
+
+Dependency management meant manually adding frameworks, copying `.a` files, and configuring build phases. CocoaPods came later and felt like stepping into the future.
+
+### Debugging Was an Art Form
+
+The debugger, `NSLog`, and ```objc
+[NSString stringWithFormat:@"%p", myObject]
 ```
-
-Every single UI element was built **programmatically**. No drag-and-drop with live preview. You wrote frames with `CGRectMake`, nested `UIView`s inside `UIView`s inside more `UIView`s, and prayed you remembered to add all the constraints.
-
-### Manual Memory Management
-
-There was a time when **you** were responsible for every `retain`, `release`, and `autorelease`. Forget to release? Memory leak. Release too early? Crash. ARC (Automatic Reference Counting) felt like magic when it arrived, but back then, we called it debugging on a Friday night.
-
-### Interface Builder (.xib files)
-
-Oh, the glorious `.xib` files. You'd design your UI in Interface Builder, then spend hours wiring up `IBOutlet` and `IBAction` connections. One broken connection and your button just… didn't work. No error, no warning. Just a dead button staring back at you.
-
-### Storyboards
-
-Then came **Storyboards** — the double-edged sword. On one hand, you could visualize entire navigation flows. On the other, merge conflicts in Storyboards were (and still are) a nightmare that no version control system on earth was built to handle.
-
-### No SwiftUI, No Previews
-
-Back then, you wrote code, built the app, ran the simulator (which took 30 seconds on a good day), navigated to the screen, checked if the button was 2 pixels off, went back, tweaked the frame, rebuilt. Repeat. For hours.
-
-Live previews? Instant UI feedback? Those felt like science fiction.
-
-### Why This Repo?
-
-This repo was created to document those foundational concepts — the stuff that shaped how we think about iOS development today. Even if you're coming in with SwiftUI and loving the declarative syntax, understanding how things worked under the hood gives you a deeper appreciation (and a few war stories to share at meetups).
-
-From Objective-C verbosity to Swift's elegance, from manual frames to Auto Layout to SwiftUI's stacks — it's been quite a journey.
+were our best friends. Xcode would sometimes just crash without a clear reason, and you'd spend an hour figuring out you forgot to connect an outlet.
 
 ---
 
-## Topics Covered
+## The Transition
 
-- Swift basics (syntax, data types, optionals, closures)
-- UIKit fundamentals
-- Auto Layout and constraints
-- Navigation patterns
-- Basic architecture (MVC, the OG)
-- And whatever else we felt like documenting along the way
+Around the middle of my iOS journey, **Swift** arrived. Suddenly, memory management was automatic with ARC, optionals kept you honest, and the syntax became readable. Then **SwiftUI** came along and flipped the entire UI paradigm from imperative to declarative.
+
+This repo captures both eras — the slow, deliberate, sometimes painful learning curve of Objective-C/UIKit, and the early excitement of Swift and its playgrounds.
 
 ---
 
-*Happy coding — and thanks for the nostalgia trip.*
+## License
+
+GPL-3.0
